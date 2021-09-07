@@ -17,6 +17,7 @@ git clone git://git.whamcloud.com/fs/lustre-release.git
 cd lustre-release
 chmod 777 autogen.sh 
 sh ./autogen.sh
+yum install libnl3-devel
 ./configure --with-linux=/usr/src/kernels/$(uname -r)
 make rpms
 yum -y install *.$(arch).rpm
