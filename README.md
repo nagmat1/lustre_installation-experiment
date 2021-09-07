@@ -22,5 +22,10 @@ yum install libnl3-devel
 make rpms
 yum -y install *.$(arch).rpm
 reboot
+```
+
+After rebooting try the next steps : 
+
+```
 
 ```
