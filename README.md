@@ -15,6 +15,7 @@ yum -y install --enablerepo=base-debuginfo kernel-debuginfo kernel-debuginfo-com
 
 git clone git://git.whamcloud.com/fs/lustre-release.git
 cd lustre-release
+chmod 777 autogen.sh 
 sh ./autogen.sh
 ./configure --with-linux=/usr/src/kernels/$(uname -r)
 make rpms
