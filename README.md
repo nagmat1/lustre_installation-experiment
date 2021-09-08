@@ -29,3 +29,15 @@ After rebooting try the next steps :
 ```
 
 ```
+
+
+
+2nd version : ```https://wiki.lustre.org/Compiling_Lustre``` 
+```
+$ git clone git://git.whamcloud.com/fs/lustre-release.git
+$ cd lustre-release
+$ git checkout 2.12.0
+$ sh autogen.sh
+$ ./configure
+$ make rpms
+```
