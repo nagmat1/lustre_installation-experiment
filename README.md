@@ -38,6 +38,14 @@ baseurl=https://downloads.whamcloud.com/public/e2fsprogs/latest/el7
 gpgcheck=0
 ```
 
+Install the latest Lustre-enabled kernel and the Lustre client on all nodes: 
+```
+yum -y install e2fsprogs \
+    lustre-client \
+    kernel-3.10.0-514.21.1.el7_lustre.x86_64 \
+    kernel-devel-3.10.0-514.21.1.el7_lustre.x86_64 \
+    kernel-headers-3.10.0-514.21.1.el7_lustre.x86_64
+```
 
 Copy the needed packages from 
 1. ```https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/ ``` 
