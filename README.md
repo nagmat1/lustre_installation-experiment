@@ -41,7 +41,6 @@ gpgcheck=0
 Install the latest Lustre-enabled kernel and the Lustre client on all nodes: 
 ```
 yum -y install e2fsprogs \
-    lustre-client \
     kernel-3.10.0-514.21.1.el7_lustre.x86_64 \
     kernel-devel-3.10.0-514.21.1.el7_lustre.x86_64 \
     kernel-headers-3.10.0-514.21.1.el7_lustre.x86_64
@@ -61,3 +60,4 @@ Main packages are :
 1. wget https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/lustre-ldiskfs-dkms-2.12.7-1.el7.noarch.rpm
 2. wget https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/lustre-osd-ldiskfs-mount-2.12.7-1.el7.x86_64.rpm
 3. wget https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/kmod-lustre-2.12.7-1.el7.x86_64.rpm
+4. wget https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/kernel-3.10.0-1160.25.1.el7_lustre.x86_64.rpm
