@@ -72,3 +72,8 @@ baseurl=https://downloads.whamcloud.com/public/e2fsprogs/latest/el7
 # exclude=*debuginfo*
 gpgcheck=0
 ```
+
+To check installed packages : 
+```
+rpm -qa | grep lustre
+```
