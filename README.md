@@ -51,16 +51,26 @@ Copy the needed packages from
 or copy them from other servers:
 2. ``` sudo scp lustre@oss:~/packages/*.* ./packages```
 
-To check installed packages : 
-```
-rpm -qa | grep lustre
-```
-
 Main packages are : 
 wget https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/kernel-3.10.0-1160.25.1.el7_lustre.x86_64.rpm https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/kmod-lustre-osd-ldiskfs-2.12.7-1.el7.x86_64.rpm https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/kernel-debuginfo-3.10.0-1160.25.1.el7_lustre.x86_64.rpm https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/lustre-2.12.7-1.el7.x86_64.rpm https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/kernel-devel-3.10.0-1160.25.1.el7_lustre.x86_64.rpm  https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/lustre-ldiskfs-dkms-2.12.7-1.el7.noarch.rpm https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/kmod-lustre-2.12.7-1.el7.x86_64.rpm https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/lustre-osd-ldiskfs-mount-2.12.7-1.el7.x86_64.rpm
 
 After downloading try : ``` yum install *.rpm ``` 
 Finishing installation : mkfs.lustre should work out. 
+
+Check installed packages by : ```  rpm -qa | grep lustre ```
+
+On my case installed packages were : 
+```
+kernel-devel-3.10.0-1160.25.1.el7_lustre.x86_64
+kernel-3.10.0-1160.25.1.el7_lustre.x86_64
+kmod-lustre-2.12.7-1.el7.x86_64
+kmod-lustre-osd-ldiskfs-2.12.7-1.el7.x86_64
+lustre-osd-ldiskfs-mount-2.12.7-1.el7.x86_64
+lustre-ldiskfs-dkms-2.12.7-1.el7.noarch
+kernel-debuginfo-3.10.0-1160.25.1.el7_lustre.x86_64
+kernel-debuginfo-common-x86_64-3.10.0-1160.25.1.el7_lustre.x86_64
+lustre-2.12.7-1.el7.x86_64
+```
 
 Configure lnet by editing :  ```vi /etc/modprobe.d/lnet.conf ```
 On my case content was : ``` options lnet networks=tcp0(enp9s4f0) ``` , you may write ```eth0``` in the brackets. 
