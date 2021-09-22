@@ -88,3 +88,8 @@ Check if the network is up by : ``` lctl network up```
 It should give ```lnet configured ``` message 
 
 By executing : ``` lctl list_nids ``` we should get ``` 10.10.1.1@tcp ```
+
+On OST site, format by ``` mkfs.lustre --ost --fsname=lustre --reformat --index=1 --mgsnode=10.10.1.1@tcp /dev/sda4 ```
+and mount by : ```  mount -t lustre /dev/sda4 /mnt/ost0``` 
+
+On ``` df -h ``` command you should get ``` /dev/sda4                      113G  1.3M  107G   1% /mnt/ost0 ```
