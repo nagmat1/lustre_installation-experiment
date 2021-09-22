@@ -93,3 +93,20 @@ On OST site, format by ``` mkfs.lustre --ost --fsname=lustre --reformat --index=
 and mount by : ```  mount -t lustre /dev/sda4 /mnt/ost0``` 
 
 On ``` df -h ``` command you should get ``` /dev/sda4                      113G  1.3M  107G   1% /mnt/ost0 ```
+
+On client site : Install client package only. Install lustre modele and lnet. 
+Then mount : ``` mount -t lustre 10.10.1.1@tcp:/lustre /mnt ``` 
+Check if mount worked out by executing ``` df -h ``` 
+You should get ``` 10.10.1.1@tcp:/lustre          119G  3.7M  112G   1% /mnt ``` line if it worked out. 
+
+You can try to copy zeros by executing : ``` dd if=/dev/zero of=/lustre bs=1k count=100k ```
+
+The execution result is : 
+``` 
+02400+0 records in
+102400+0 records out
+104857600 bytes (105 MB) copied, 1.38912 s, 75.5 MB/s
+```
+
+
+
