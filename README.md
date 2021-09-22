@@ -103,7 +103,7 @@ You can try to copy zeros by executing : ``` dd if=/dev/zero of=/lustre bs=1k co
 
 The execution result is : 
 ``` 
-02400+0 records in
+102400+0 records in
 102400+0 records out
 104857600 bytes (105 MB) copied, 1.38912 s, 75.5 MB/s
 ```
