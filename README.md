@@ -62,6 +62,9 @@ wget https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPM
 After downloading try : ``` yum install *.rpm ``` 
 Finishing installation : mkfs.lustre should work out. 
 
+Configure lnet by editing :  ```vi /etc/modprobe.d/lnet.conf ```
+On my case content was : ``` options lnet networks=tcp0(enp9s4f0) ``` , you may write ```eth0``` in the brackets. 
+
 Format your secondary storage using : 
 ``` sudo mkfs.lustre --fsname=lustre --mgs --mdt /dev/sda4 ``` 
 Then mount : ``` mount -t lustre /dev/sda4 /mnt/MDS ``` 
@@ -73,3 +76,5 @@ Create a modeprobe configuration file for the LNet ```/etc/modprobe.d/lnet.conf 
 
 Check if the network is up by : ``` lctl network up```  
 It should give ```lnet configured ``` message 
+
+By executing : ``` lctl list_nids ``` we should get ``` 10.10.1.1@tcp ```
