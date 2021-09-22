@@ -72,4 +72,4 @@ Check if :
 Create a modeprobe configuration file for the LNet ```/etc/modprobe.d/lnet.conf ``` and set the networks parameter as tcp0(eth0). Basically, you just need this one line on the file:  ``` options lnet networks=tcp0(eth0) ```
 
 Check if the network is up by : ``` lctl network up```  
-It should give ```lnet configured message ``` 
+It should give ```lnet configured ``` message 
