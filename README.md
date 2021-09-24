@@ -54,7 +54,7 @@ or copy them from other servers:
 Main packages are : 
 wget https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/kernel-3.10.0-1160.25.1.el7_lustre.x86_64.rpm https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/kmod-lustre-osd-ldiskfs-2.12.7-1.el7.x86_64.rpm https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/kernel-debuginfo-3.10.0-1160.25.1.el7_lustre.x86_64.rpm https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/lustre-2.12.7-1.el7.x86_64.rpm https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/kernel-devel-3.10.0-1160.25.1.el7_lustre.x86_64.rpm  https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/lustre-ldiskfs-dkms-2.12.7-1.el7.noarch.rpm https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/kmod-lustre-2.12.7-1.el7.x86_64.rpm https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/lustre-osd-ldiskfs-mount-2.12.7-1.el7.x86_64.rpm
 
-After downloading try : ``` yum install *.rpm ``` 
+After downloading try : ``` yum install *.rpm -y ``` 
 Finishing installation : mkfs.lustre should work out. 
 
 Check installed packages by : ```  rpm -qa | grep lustre ```
