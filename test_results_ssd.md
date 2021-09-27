@@ -214,7 +214,108 @@ Run status group 0 (all jobs):
 Shortly bw= 373KiB/s which is very slow. 
 
 The same workload on /mnt/ folder where we mounted lustre file system generates : 
+```
+test: (groupid=0, jobs=1): err= 0: pid=11532: Mon Sep 27 13:05:40 2021
+  write: IOPS=31, BW=126KiB/s (129kB/s)(100MiB/811367msec); 0 zone resets
+    clat (msec): min=11, max=120, avg=31.68, stdev= 7.45
+     lat (msec): min=11, max=120, avg=31.68, stdev= 7.45
+    clat percentiles (msec):
+     |  1.00th=[   19],  5.00th=[   24], 10.00th=[   25], 20.00th=[   25],
+     | 30.00th=[   26], 40.00th=[   31], 50.00th=[   31], 60.00th=[   31],
+     | 70.00th=[   36], 80.00th=[   37], 90.00th=[   43], 95.00th=[   44],
+     | 99.00th=[   55], 99.50th=[   55], 99.90th=[   61], 99.95th=[   67],
+     | 99.99th=[  103]
+   bw (  KiB/s): min=   56, max=  160, per=19.99%, avg=126.22, stdev=11.23, samples=1622
+   iops        : min=   14, max=   40, avg=31.55, stdev= 2.81, samples=1622
+  lat (msec)   : 20=1.27%, 50=97.08%, 100=1.63%, 250=0.01%
+  cpu          : usr=0.06%, sys=0.45%, ctx=28815, majf=0, minf=39
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=0,25600,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+test: (groupid=0, jobs=1): err= 0: pid=11533: Mon Sep 27 13:05:40 2021
+  write: IOPS=31, BW=126KiB/s (130kB/s)(100MiB/809700msec); 0 zone resets
+    clat (usec): min=1345, max=120309, avg=31613.80, stdev=7307.92
+     lat (usec): min=1346, max=120310, avg=31615.23, stdev=7307.94
+    clat percentiles (usec):
+     |  1.00th=[18482],  5.00th=[23987], 10.00th=[24249], 20.00th=[24511],
+     | 30.00th=[25297], 40.00th=[30016], 50.00th=[30278], 60.00th=[30540],
+     | 70.00th=[35914], 80.00th=[36439], 90.00th=[42730], 95.00th=[43254],
+     | 99.00th=[54264], 99.50th=[54789], 99.90th=[60556], 99.95th=[66323],
+     | 99.99th=[79168]
+   bw (  KiB/s): min=   56, max=  160, per=19.99%, avg=126.48, stdev=11.15, samples=1619
+   iops        : min=   14, max=   40, avg=31.62, stdev= 2.79, samples=1619
+  lat (msec)   : 2=0.03%, 4=0.01%, 10=0.01%, 20=1.04%, 50=97.46%
+  lat (msec)   : 100=1.45%, 250=0.01%
+  cpu          : usr=0.06%, sys=0.47%, ctx=27383, majf=0, minf=39
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=0,25600,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+test: (groupid=0, jobs=1): err= 0: pid=11534: Mon Sep 27 13:05:40 2021
+  write: IOPS=31, BW=126KiB/s (129kB/s)(100MiB/812142msec); 0 zone resets
+    clat (msec): min=11, max=141, avg=31.71, stdev= 7.47
+     lat (msec): min=11, max=141, avg=31.71, stdev= 7.47
+    clat percentiles (usec):
+     |  1.00th=[18220],  5.00th=[23987], 10.00th=[24249], 20.00th=[24511],
+     | 30.00th=[25297], 40.00th=[30016], 50.00th=[30278], 60.00th=[30540],
+     | 70.00th=[35914], 80.00th=[36439], 90.00th=[42730], 95.00th=[43779],
+     | 99.00th=[54264], 99.50th=[54789], 99.90th=[65274], 99.95th=[66847],
+     | 99.99th=[95945]
+   bw (  KiB/s): min=   64, max=  248, per=19.99%, avg=126.10, stdev=11.77, samples=1624
+   iops        : min=   16, max=   62, avg=31.53, stdev= 2.94, samples=1624
+  lat (msec)   : 20=1.15%, 50=97.14%, 100=1.71%, 250=0.01%
+  cpu          : usr=0.06%, sys=0.47%, ctx=28321, majf=0, minf=38
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=0,25600,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+test: (groupid=0, jobs=1): err= 0: pid=11535: Mon Sep 27 13:05:40 2021
+  write: IOPS=31, BW=126KiB/s (129kB/s)(100MiB/811030msec); 0 zone resets
+    clat (msec): min=11, max=102, avg=31.67, stdev= 7.39
+     lat (msec): min=11, max=102, avg=31.67, stdev= 7.39
+    clat percentiles (usec):
+     |  1.00th=[18220],  5.00th=[23987], 10.00th=[24249], 20.00th=[24511],
+     | 30.00th=[29492], 40.00th=[30016], 50.00th=[30278], 60.00th=[30540],
+     | 70.00th=[35914], 80.00th=[36439], 90.00th=[42730], 95.00th=[43254],
+     | 99.00th=[54264], 99.50th=[54789], 99.90th=[61080], 99.95th=[66847],
+     | 99.99th=[79168]
+   bw (  KiB/s): min=   64, max=  160, per=19.99%, avg=126.28, stdev=11.04, samples=1621
+   iops        : min=   16, max=   40, avg=31.57, stdev= 2.76, samples=1621
+  lat (msec)   : 20=1.36%, 50=97.02%, 100=1.61%, 250=0.01%
+  cpu          : usr=0.06%, sys=0.46%, ctx=29384, majf=0, minf=39
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=0,25600,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+test: (groupid=0, jobs=1): err= 0: pid=11536: Mon Sep 27 13:05:40 2021
+  write: IOPS=31, BW=126KiB/s (129kB/s)(100MiB/811909msec); 0 zone resets
+    clat (msec): min=11, max=120, avg=31.70, stdev= 7.47
+     lat (msec): min=11, max=120, avg=31.70, stdev= 7.47
+    clat percentiles (msec):
+     |  1.00th=[   19],  5.00th=[   24], 10.00th=[   25], 20.00th=[   25],
+     | 30.00th=[   26], 40.00th=[   31], 50.00th=[   31], 60.00th=[   31],
+     | 70.00th=[   36], 80.00th=[   37], 90.00th=[   43], 95.00th=[   44],
+     | 99.00th=[   55], 99.50th=[   55], 99.90th=[   62], 99.95th=[   68],
+     | 99.99th=[  103]
+   bw (  KiB/s): min=   56, max=  176, per=19.99%, avg=126.10, stdev=11.28, samples=1623
+   iops        : min=   14, max=   44, avg=31.52, stdev= 2.82, samples=1623
+  lat (msec)   : 20=1.29%, 50=97.07%, 100=1.62%, 250=0.02%
+  cpu          : usr=0.06%, sys=0.45%, ctx=28593, majf=0, minf=38
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=0,25600,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
 
+Run status group 0 (all jobs):
+  WRITE: bw=630KiB/s (646kB/s), 126KiB/s-126KiB/s (129kB/s-130kB/s), io=500MiB (524MB), run=809700-812142msec
+```
+The bandwidth on lustre client was : 630 KiB/s. 
 
 On lustre file system : 
 ```
