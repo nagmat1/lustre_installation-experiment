@@ -2,3 +2,4 @@ I am using ```fio``` workload generator to test my data on storage.
 I installed ``` https://github.com/axboe/fio``` for Centos 7 and upgraded GCC version to 4.9 to install it on Centos 7. 
 Then I generated ``` ./fio --randrepeat=1 --direct=1 --name=test --filename=test --bs=4K --size=100M -readwrite=write --numjobs=5 ``` on /dev/sda1 storage to test 
 SSD performance on client computes. 
+
