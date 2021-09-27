@@ -215,8 +215,25 @@ Shortly bw= 373KiB/s which is very slow.
 
 The same workload on /mnt/ folder where we mounted lustre file system generates : 
 
+
+On lustre file system : 
 ```
+dd if=/dev/zero of=/mnt/1G bs=1M count=100 
+
+100+0 records in
+100+0 records out
+104857600 bytes (105 MB) copied, 0.403955 s, 260 MB/s
+```
+
+On local storage : 
+```
+dd if=/dev/zero of=/test bs=1M count=100
+
+100+0 records in
+100+0 records out
+104857600 bytes (105 MB) copied, 0.551001 s, 190 MB/s
 
 
 ```
+
 
