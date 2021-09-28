@@ -1,9 +1,9 @@
 [global]
 bs=4K
 size=10M
-numjobs=100
-name=raw-randreadwrite
-rw=randrw
+filename=/mnt/write100
+name=write
 							
 [job1]
-filename=/mnt/write100 
+numjobs=100
+rw=write
