@@ -94,7 +94,15 @@ and mount by : ```  mount -t lustre /dev/sda4 /mnt/ost0```
 
 On ``` df -h ``` command you should get ``` /dev/sda4                      113G  1.3M  107G   1% /mnt/ost0 ```
 
-On client site : Install client package only. Install lustre modele and lnet. 
+On client site : Install client package only. 
+```
+yum -y install e2fsprogs \
+    lustre-client \
+    kernel-3.10.0-514.21.1.el7_lustre.x86_64 \
+    kernel-devel-3.10.0-514.21.1.el7_lustre.x86_64 \
+    kernel-headers-3.10.0-514.21.1.el7_lustre.x86_64
+```
+Install lustre modele and lnet.
 Then mount : ``` mount -t lustre 10.10.1.1@tcp:/lustre /mnt ``` 
 Check if mount worked out by executing ``` df -h ``` 
 You should get ``` 10.10.1.1@tcp:/lustre          119G  3.7M  112G   1% /mnt ``` line if it worked out. 
