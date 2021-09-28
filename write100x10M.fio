@@ -1,0 +1,9 @@
+[global]
+bs=4K
+size=10M
+numjobs=100
+name=raw-randreadwrite
+rw=randrw
+							
+[job1]
+filename=/mnt/write100 
