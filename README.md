@@ -49,7 +49,7 @@ yum -y install e2fsprogs \
 Copy the needed packages from 
 1. ```https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/ ``` 
 or copy them from other servers:
-2. ``` sudo scp lustre@oss:~/packages/*.* ./packages```
+2. ```scp lustre@oss:~/packages/*.* ./packages```
 
 Main packages are : 
 wget https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/kernel-3.10.0-1160.25.1.el7_lustre.x86_64.rpm https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/kmod-lustre-osd-ldiskfs-2.12.7-1.el7.x86_64.rpm https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/kernel-debuginfo-3.10.0-1160.25.1.el7_lustre.x86_64.rpm https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/lustre-2.12.7-1.el7.x86_64.rpm https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/kernel-devel-3.10.0-1160.25.1.el7_lustre.x86_64.rpm  https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/lustre-ldiskfs-dkms-2.12.7-1.el7.noarch.rpm https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/kmod-lustre-2.12.7-1.el7.x86_64.rpm https://downloads.whamcloud.com/public/lustre/latest-release/el7/server/RPMS/x86_64/lustre-osd-ldiskfs-mount-2.12.7-1.el7.x86_64.rpm
