@@ -76,7 +76,7 @@ Configure lnet by editing :  ```vi /etc/modprobe.d/lnet.conf ```
 On my case content was : ``` options lnet networks=tcp0(enp9s4f0) ``` , you may write ```eth0``` in the brackets. 
 
 Format your secondary storage using : 
-``` sudo mkfs.lustre --fsname=lustre --mgs --mdt /dev/sda4 ``` 
+``` mkfs.lustre --fsname=lustre --mgs --mdt /dev/sda4 ``` 
 Then mount : ``` mount -t lustre /dev/sda4 /mnt/MDS ``` 
 by typing : mount 
 Check if : 
@@ -115,6 +115,3 @@ The execution result is :
 102400+0 records out
 104857600 bytes (105 MB) copied, 1.38912 s, 75.5 MB/s
 ```
-
-
-
